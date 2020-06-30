@@ -1,22 +1,20 @@
 const mongoose = require("mongoose");
-
 const config = require("config");
-
 const db = config.get("mongoURI");
-
-dbs =
-  "mongodb+srv://chin123:E550VabxNsjndBwl@contactkeeper.yzqgh.mongodb.net/test?retryWrites=true&w=majority";
 
 const connectDB = async () => {
   try {
-    mongoose.connect(dbs, {
+    await mongoose.connect(db, {
       useNewUrlParser: true,
       useCreateIndex: true,
       useFindAndModify: false,
+      useUnifiedTopology: true,
     });
-    console.log("Mongo connecto");
+
+    console.log("MongoDB Connected...");
   } catch (err) {
     console.error(err.message);
+    // Exit process with failure
     process.exit(1);
   }
 };

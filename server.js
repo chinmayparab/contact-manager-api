@@ -12,8 +12,6 @@ app.use(
   })
 );
 
-app.get("/", (req, res) => res.json({ msg: "Hey there!" }));
-
 // routes
 
 app.use("/api/users", require("./routes/users"));
