@@ -6,7 +6,6 @@ const config = require("config");
 const { check, validationResult } = require("express-validator");
 
 const User = require("../models/User");
-const { genSalt } = require("bcryptjs");
 
 // @route           POST api/users
 // @description     Registers our users
